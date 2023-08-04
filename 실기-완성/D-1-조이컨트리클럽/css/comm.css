@@ -9,3 +9,73 @@
   line-height: 1.5;
   color: #333;
 }
+
+.inner {
+  display: flex;
+  background: lightseagreen;
+}
+
+header {
+  width: 200px;
+  background: goldenrod;
+}
+
+.logo a {
+  display: block;
+  /* text-align: center; */
+  /* img 태그가 inline일 경우 */
+}
+
+.logo img {
+  display: block;
+  margin: auto;
+}
+
+#gnb .depth1 {
+  padding: 0 30px;
+}
+
+#gnb .depth1>li>a {
+  display: block;
+  position: relative;
+  padding: 10px 0;
+  color: #000000;
+  border-bottom: 1px solid #000000;
+}
+
+#gnb .depth1>li>a:hover {
+  color: blue;
+}
+
+#gnb .depth1>li>a::after {
+  content: '>';
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+
+#gnb .depth2 {
+  padding-top: 10px;
+}
+
+#gnb .depth2 a {
+  display: block;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #000;
+}
+
+#gnb .depth2 a:hover {
+  color: #ffffff;
+  background: blue;
+}
+
+main {
+  flex-grow: 1;
+  background: lightgoldenrodyellow;
+}
+
+footer {
+  height: 100px;
+  background: lightcyan;
+}
