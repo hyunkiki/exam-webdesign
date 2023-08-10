@@ -124,7 +124,7 @@ header {
 main {
   position: relative;
   flex-grow: 1;
-  /* width: calc(100% - 200px); */
+  width: calc(100% - 200px);
   background: lightyellow;
 }
 
@@ -132,6 +132,7 @@ main {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1000;
   background: lightcyan;
 }
 
@@ -148,18 +149,166 @@ main {
 }
 
 .slide {
+  position: relative;
+  overflow: hidden;
   height: 400px;
   background: lightgray;
 }
 
+.slide ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  animation: ani-slide 10s cubic-bezier(0.72, 0.01, 0.26, 0.99);
+}
+
+@keyframes ani-slide {
+  0% {
+    top: 0;
+  }
+
+  30% {
+    top: 0;
+  }
+
+  33% {
+    top: -100%;
+  }
+
+  63% {
+    top: -100%;
+  }
+
+  66% {
+    top: -200%;
+  }
+
+  96% {
+    top: -200%;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+
 .banner {
   height: 200px;
+  padding: 20px;
   background: lightskyblue;
 }
 
+.banner a {
+  display: block;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  height: 160px;
+}
+
 .tabs-wrap {
+  position: relative;
   height: 250px;
+  margin: 20px;
+  padding-top: 70px;
   background: lightsalmon;
+}
+
+.tabs-wrap .active .tab-tit {
+  z-index: 10;
+  border: 2px solid blue;
+  border-bottom: 2px solid #ffffff;
+  background-color: #fff;
+}
+
+.tabs-wrap::before {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: blue;
+}
+
+
+.tabs-wrap .tab-tit {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+  background: #9b9b9b;
+  border: 2px solid #55555594;
+  text-align: center;
+}
+
+.tabs-wrap .tab-tit button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+}
+
+.tabs-wrap .tit-bbs {
+  left: 0;
+}
+
+
+.tabs-wrap .tit-gallery {
+  left: 97px;
+}
+
+.tabs-wrap .tab-cont {
+  display: none;
+}
+
+.tabs-wrap .active .tab-cont {
+  display: block;
+}
+
+.lst-bbs a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.lst-bbs a p {
+  overflow: hidden;
+  width: 75%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 16px;
+}
+
+.lst-gallery {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lst-gallery li {
+  width: 30%;
+}
+
+.lst-gallery img {
+  display: block;
+  width: 100%;
 }
 
 footer {
